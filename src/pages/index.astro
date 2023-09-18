@@ -1,0 +1,29 @@
+---
+// layouts
+import Layout from "../layouts/Layout.astro";
+
+// components
+import Header from "../components/Header.astro";
+import Card from "../components/Card.astro";
+
+// data
+import { platformStats, overviewTodayStats } from "../data";
+import OverviewCard from "../components/OverviewCard.astro";
+---
+
+<Layout title="Social Media Dashboard">
+  <Header />
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center"
+  >
+    {platformStats.map((item) => <Card {...item} />)}
+  </div>
+  <section class="py-8">
+    <h2 class="text-2xl mb-4">Overview - Today</h2>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 place-items-center"
+    >
+      {overviewTodayStats.map((stat) => <OverviewCard {...stat} />)}
+    </div>
+  </section>
+</Layout>

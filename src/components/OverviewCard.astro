@@ -1,0 +1,31 @@
+---
+import Icon from "astro-icon";
+
+export interface Props {
+  platform: string;
+  type: string;
+  isIncreasing: boolean;
+  total: string;
+  percentage: string;
+}
+
+const { platform, type, isIncreasing, total, percentage } = Astro.props;
+---
+
+<div
+  class="md:w-[min(100%,20rem)] w-full bg-card hover:bg-card-hover p-4 space-y-4 rounded cursor-pointer"
+>
+  <div class="flex justify-between items-center">
+    <span class="text-sm text-neutral-2">{type}</span>
+    <Icon name={`icon-${platform}`} size={20} />
+  </div>
+  <div class="flex justify-between items-center">
+    <span class="text-2xl font-bold">{total}</span>
+    <div class="flex justify-center items-center gap-1 text-[0.75rem]">
+      <Icon name={`icon-${isIncreasing ? "up" : "down"}`} size={12} />
+      <span class={`${isIncreasing ? "text-positive" : "text-negative"}`}>
+        {percentage}
+      </span>
+    </div>
+  </div>
+</div>

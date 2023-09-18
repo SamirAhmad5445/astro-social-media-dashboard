@@ -1,0 +1,17 @@
+---
+import { totalFollowers } from "../data";
+import Toggle from "./Toggle.svelte";
+---
+
+<header
+  class="text-neutral-2 max-md:divide-y max-md:divide-current py-4 flex max-md:flex-col justify-between md:items-center font-bold"
+>
+  <div class="py-4">
+    <h1 class="text-neutral-1 text-2xl">Social Media Dashboard</h1>
+    <p>Total Followers: {totalFollowers}</p>
+  </div>
+  <div class="py-4 flex justify-between gap-3">
+    <span>Dark Mode</span>
+    <Toggle client:load />
+  </div>
+</header>

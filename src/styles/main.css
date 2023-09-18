@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /** Light theme */
+  :root,
+  :root[data-theme="light"] {
+    --color-body1: 0deg 0% 100%;
+    --color-body2: 225deg 100% 98%;
+    --color-card: 227deg 47% 96%;
+    --color-card-hover: 227deg 47% 92%;
+    --color-neutral1: 230deg 17% 14%;
+    --color-neutral2: 228deg 12% 44%;
+    --color-toggle1: 230deg 22% 74%;
+    --color-toggle2: 230deg 22% 74%;
+  }
+  /** Dark theme */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-body1: 230deg 17% 14%;
+      --color-body2: 232deg 19% 15%;
+      --color-card: 228deg 28% 20%;
+      --color-card-hover: 228deg 28% 25%;
+      --color-neutral1: 0deg 0% 100%;
+      --color-neutral2: 228deg 34% 66%;
+      --color-toggle1: 210deg 78% 56%;
+      --color-toggle2: 146deg 68% 55%;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-body1: 230deg 17% 14%;
+    --color-body2: 232deg 19% 15%;
+    --color-card: 228deg 28% 20%;
+    --color-card-hover: 228deg 28% 25%;
+    --color-neutral1: 0deg 0% 100%;
+    --color-neutral2: 228deg 34% 66%;
+    --color-toggle1: 210deg 78% 56%;
+    --color-toggle2: 146deg 68% 55%;
+  }
+
+  body {
+    @apply font-inter text-neutral-1;
+  }
+}
+
+@layer utilities {
+  .instagram {
+    @apply bg-gradient-to-r from-instagram-1 to-instagram-2;
+  }
+  .facebook {
+    @apply bg-facebook;
+  }
+  .twitter {
+    @apply bg-twitter;
+  }
+  .youtube {
+    @apply bg-youtube;
+  }
+}
