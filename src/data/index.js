@@ -18,7 +18,7 @@ export const platformStats = [
     today: 12,
   },
   {
-    platform: "instagram",
+    platform: "twitter",
     user: "@nathanf",
     total: "1044",
     type: "Followers",
@@ -26,7 +26,7 @@ export const platformStats = [
     today: 99,
   },
   {
-    platform: "twitter",
+    platform: "instagram",
     user: "@realnathanf",
     total: "11k",
     type: "Followers",
