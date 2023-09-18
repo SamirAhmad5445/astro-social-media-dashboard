@@ -1,13 +1,14 @@
 <script>
   import { onMount } from "svelte";
 
-  onMount((e) => {
-    const localTheme = localStorage.getItem("page-color-scheme");
+  onMount(() => {
+    let localTheme = localStorage.getItem("page-color-scheme");
     if (!localTheme) {
       // if no localTheme check the system preference
+      window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? setTheme("dark")
-        : setTheme("light");
+        ? (localTheme = "dark")
+        : (localTheme = "light");
     } // else set the theme to the localTheme
     setTheme(localTheme);
   });
